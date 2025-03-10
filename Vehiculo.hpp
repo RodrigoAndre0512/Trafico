@@ -1,11 +1,22 @@
+#include <cmath>
 #ifndef VEHICULO_HPP
 #define VEHICULO_HPP
+struct Position {
+    double x, y;
+    
+    // Calcula la distancia entre dos posiciones
+    double distanceTo(const Position& other) const {
+        return sqrt(pow(x - other.x, 2) + pow(y - other.y, 2));
+    }
+};
 class Vehiculo
 {
 private:
   char* Placa;
   char* Modelo;
-  char* tipo;
+  double velocidad;
+  Position ubicacion; // ubicacion actual
+  Position destino; // ubicacion del destino
   void copiar(const char* origen, char*& destino)
     {
         if (origen == nullptr) {
@@ -23,7 +34,7 @@ private:
     }
 public:
   Vehiculo();
-  Vehiculo(const char* in_pla, const char* in_mod, const char* in_marc);
+  Vehiculo(const char* in_pla, const char* in_mod);
   ~Vehiculo();
 };
 /*
