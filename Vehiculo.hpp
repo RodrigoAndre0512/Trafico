@@ -1,6 +1,32 @@
-#ifndef ADMINISTRADOR_HPP
-#define ADMINISTRADOR_HPP
-#include "Persona.hpp"
+#ifndef VEHICULO_HPP
+#define VEHICULO_HPP
+class Vehiculo
+{
+private:
+  char* Placa;
+  char* Modelo;
+  char* tipo;
+  void copiar(const char* origen, char*& destino)
+    {
+        if (origen == nullptr) {
+            destino = nullptr;
+            return;
+        }
+        int n=0;
+        while(origen[n]!='\0') n++;
+        destino=new char[n+1];
+        for(int i=0; i<n;i++) 
+        {
+            destino[i]=origen[i]; 
+        }
+        destino[n]='\0';
+    }
+public:
+  Vehiculo();
+  Vehiculo(const char* in_pla, const char* in_mod, const char* in_marc);
+  ~Vehiculo();
+};
+/*
 class Administrador : public Persona {
 protected:
    char* ID; // Redefinición con un tamaño diferente
@@ -34,5 +60,5 @@ public:
     // Funciones de autenticación y archivo
     bool iniciarSesion(const char* inputID, const char* inputContrasena) const override;
     void guardarInfoEnArchivo(const char* nombreArchivo) const;
-};
+}*/
 #endif
