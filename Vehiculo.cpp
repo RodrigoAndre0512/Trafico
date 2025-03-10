@@ -9,12 +9,12 @@ Vehiculo::Vehiculo()
     Placa=nullptr;
     Modelo=nullptr;
     Tipo=nullptr;
+    velocidad=0.0;
 }
-Vehiuclo::Vehiculo(const char* in_pla, const char* in_mod, const char* in_marc)
+Vehiuclo::Vehiculo(const char* in_pla, const char* in_mod, double in_velo, Position ubicacion, Position destino)
     {
         copiar_ca(in_pla, placa);
         copiar_ca(in_mod, modelo);
-        copiar_ca(in_marc, marca);
     }
 // Destructor
 Administrador::~Administrador()
