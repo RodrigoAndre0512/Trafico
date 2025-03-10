@@ -6,22 +6,25 @@
 // Constructor
 Vehiculo::Vehiculo()
 {
-    Placa=nullptr;
-    Modelo=nullptr;
-    Tipo=nullptr;
-    velocidad=0.0;
+    placa=nullptr;
+    modelo=nullptr;
+    velocidad{0};
+    ubicacion{0,0};
+    destino{0,0};
 }
-Vehiuclo::Vehiculo(const char* in_pla, const char* in_mod, double in_velo, Position ubicacion, Position destino)
+Vehiculo::Vehiculo(const char* in_pla, const char* in_mod, double in_velo, Position in_ubi, Position in_des)
     {
-        copiar_ca(in_pla, placa);
-        copiar_ca(in_mod, modelo);
+        copiar(in_pla, placa);
+        copiar(in_mod, modelo);
+        velocidad= in_velo;
+        ubicacion=in_ubi;
+        destino=in_des;
     }
 // Destructor
-Administrador::~Administrador()
+Vehiculo::~Vehiculo()
 {
     delete[] Placa;
     delete[] Modelo;
-    delete[] Tipo;
 }
 
 // Método para crear ID
