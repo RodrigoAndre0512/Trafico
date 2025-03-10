@@ -34,7 +34,7 @@ private:
     }
 public:
   Vehiculo();
-  Vehiculo(const char* in_pla, const char* in_mod);
+  Vehiculo(const char* in_pla, const char* in_mod, double in_velo, Position ubicacion, Position destino);
   ~Vehiculo();
 };
 /*
