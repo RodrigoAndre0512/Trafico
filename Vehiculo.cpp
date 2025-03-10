@@ -1,17 +1,27 @@
 #include <iostream>
-#include "Administrador.hpp"
+#include "Vehiculo.hpp"
 
 #include <fstream>
 
 // Constructor
-Administrador::Administrador()
+Vehiculo::Vehiculo()
 {
-    ID = new char[13]();
+    Placa=nullptr;
+    Modelo=nullptr;
+    Tipo=nullptr;
 }
+Vehiuclo::Vehiculo(const char* in_pla, const char* in_mod, const char* in_marc)
+    {
+        copiar_ca(in_pla, placa);
+        copiar_ca(in_mod, modelo);
+        copiar_ca(in_marc, marca);
+    }
 // Destructor
 Administrador::~Administrador()
 {
-    delete[] ID;
+    delete[] Placa;
+    delete[] Modelo;
+    delete[] Tipo;
 }
 
 // Método para crear ID
